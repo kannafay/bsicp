@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>北石ICP备案管理系统</title>
+	<meta http-equiv="Cache-Control" content="no-transform"/> 
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="shortcut icon" href="https://dd-static.jd.com/ddimg/jfs/t1/201820/10/7711/51212/614ab952E1864370b/aee741905976fc3b.png" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="css/style-login.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="common/layui/layui.js"></script>
+</head>
+
+<body>
+	<div class="background">
+		<div class="background-images"></div>
+	</div>
+	<div class="container-login">
+		<div class="content-login">
+			<p>登录系统</p>
+			<form class="form-login">
+				<input type="text" id="username" placeholder="用户名">
+				<input type="password" id="password" onkeydown="LoginSubmit()" placeholder="密码">
+				<button type="submit" id="login">登录</button>
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			sessionStorage.clear();
+			$("#login").click(function(e) {
+				let user = $("#username").val(),
+				pass = $("#password").val();
+				if(user == '' || pass == ''){
+					layer.msg('请填写用户名或密码', {
+						icon:2,
+						offset: 't'
+					});
+				}else {
+					layer.load(2);
+					$.ajax({
+						url: '../API/admin.php',
+						type: 'GET',
+						data: {
+							a: 'login',
+							u:user,
+							p:pass
+						},
+						success:function(e){
+							if(e.data.errCode == 200){
+								sessionStorage.setItem("token", e.data.token);
+								window.location.href="ICPMS_index.html";
+								layer.closeAll('loading');
+							}else {
+								layer.closeAll('loading');
+								layer.msg(e.data.errMsg, {
+									icon:2,
+									offset: 't'
+								});
+							}
+						},
+						error:function(){
+							layer.closeAll('loading');
+							layer.msg("网络错误请稍后再试", {
+									icon:2,
+									offset: 't'
+								});
+						}
+					})
+				};
+
+				return false;
+			});
+		});
+	</script>
+</body>

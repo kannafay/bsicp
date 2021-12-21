@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>申请成功</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+
+        body {
+
+            line-height: 24px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        p {
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+
+        .content {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 20px;
+            border: 2px solid #009688;
+            box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+        }
+
+        .content>div {
+            margin-top: 20px;
+        }
+
+        .c1 {
+            display: inline-block;
+            background-color: #009688;
+            color: #fff;
+            padding: 5px 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+        }
+
+        span {
+            color: #009688;
+        }
+
+        h2 {
+            color: #009688;
+            font-size: 15px;
+        }
+
+        .c7 {
+            margin-bottom: 20px;
+
+        }
+
+        h3 {
+
+            text-align: center;
+        }
+
+        h3 a {
+            display: inline-block;
+            background-color: #009688;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+        }
+
+        img {
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        .c7 .c7-p p {
+            font-size: 12px;
+            line-height: 16px;
+            text-align: center;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="c1">
+                <h1>Dear {webmaster}</h1>
+            </div>
+            <div class="c2">
+                <p>您的备案申请已通过审核！</p>
+                <p>请在贵站的页脚添加BSICP备案链接，</p>
+                <p>以免系统删除，如已添加请忽略。</p>
+            </div>
+            <div class="c3">
+                <h2>#贵站信息</h2>
+                <p>备案号码：BSICP备{inum}号</p>
+                <p>网站名称：{name}</p>
+                <p>首页域名：{domain}</p>
+                <p>站长昵称：{webmaster}</p>
+                <p>网站描述：{desp}</p>
+            </div>
+            <div class="c4">
+                <h2>#页脚代码</h2>
+                <p>&lt;img style="vertical-align: middle;" src="https://www.xxx.com/icon.png" alt=""&gt;&lt;a target="_blank" href="https://www.xxx.com/#{inum}"&gt; BSICP备{inum}号&lt;/a&gt;</p>
+            </div>
+            <div class="c5">
+                <h2>#欢迎加入我们</h2>
+                <p>BS官网：https://www.xxx.com</p>
+                <p>BS官网：https://www.xxx.com</p>
+                <p>BSQQ群：xxxxxxxx</p>
+            </div>
+            <div class="c6">
+                <h2>#小提示</h2>
+                <p>管理邮箱有 [修改/注销] 该备案的权限，请勿失效。</p>
+                <p>祝萌萌哒</p>
+            </div>
+            <div class="c7">
+                <h3><a target="_blank" href="https://www.xxx.com/#{inum}">点击查看你的备案信息</a></h3>
+                <img src="/images/hr.png" alt="">
+                <div class="c7-p">
+                    <p>本邮件为备案系统自动发出，请勿直接回复</p>
+                    <p> &#169; 2021 BSICP备案中心</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

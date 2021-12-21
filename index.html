@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/icon.png" type="image/x-icon">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="common/layer/layer.js"></script>
+    <script src="js/bsicp.main.js"></script>
+    <title>BSICP备案中心</title>
+</head>
+<body >
+    <div class="background">
+        <div class="background-images"></div>
+    </div>
+    <div class="container" >
+        <div class="content" >
+            <div class="search">
+                <h2><img width="30px" src="/images/logo.png"> BSICP备案中心</h2>
+                <form class="form-search">
+                    <input type="text" id="searchVal" placeholder="请输入备案号或域名以查询">
+                    <button id="isearch" target="_blank"></button>
+                </form>
+                <div class="menu">
+                    <div class="popup">
+                        <span class="side side-left">[</span><a class="side-content" name="popup">申请备案</a><span class="side side-right">]</span>
+                    </div>
+                    <div class="popup" >
+                        <span class="side side-left">[</span><a class="side-content" name="popup1">备案说明</a><span class="side side-right">]</span>
+                    </div>
+                    <div class="popup" >
+                        <span class="side side-left">[</span><a class="side-content" name="popup2">用户协议</a><span class="side side-right">]</span>
+                    </div>
+                </div>
+                <div id="popup">
+                    <h2>申请备案</h2>
+                    <p class="tips-apply" >请先认真阅读 [备案说明] 和 [用户协议]</p>
+                    <form class="form-apply">
+                        <div class="form-group">
+                            <p>网站名称：</p>
+                            <input class="form-control" type="text" id="webname" placeholder="请填写网站名称">
+                        </div>
+                        <div class="form-group">
+                            <p>网站域名：</p>
+                            <input class="form-control" type="text" id="webdomain" placeholder="例如:abc.com或xxx.abc.com">
+                        </div>
+                        <div class="form-group">
+                            <p>网站描述：</p>
+                            <input class="form-control" type="text" id="webdesp" placeholder="例如:个人博客、个人空间、XXX企业官网等">
+                        </div>
+                        <div class="form-group">
+                            <p>所有者：</p>
+                            <input class="form-control" type="text" id="webmaster" placeholder="站长昵称">
+                        </div>
+                        <div class="form-group">
+                            <p>管理邮箱：</p>
+                            <input class="form-control" type="email" id="webmail" placeholder="请填写网站管理员的邮箱">
+                        </div>
+                        <div class="form-group">
+                            <p>验证码：</p>
+                            <div class="vercode">
+                                <input class="form-control" type="email" id="vercode" placeholder="请填写您邮箱收到的验证码">
+                                <input type="button" id="getvercode" value="获取验证码">
+                            </div>
+                        </div>
+                        <div class="form-group form-submit">
+                            <button type="button" class="btn-submit" id="submit">提交申请</button>
+                            <button type="button" class="btn-submit" id="reset">重新填写</button>
+                            <button type="button" class="btn-submit btn-submit-a" name="popup3">页脚代码</button>
+                        </div>
+                    </form>
+                    <a name="close">关闭</a>
+                </div>
+                <div id="popup1">
+                    <h2>备案说明</h2>
+                    <p>#BSICP备案系统是什么？</p>
+                    <p>
+                        1.方便用户了解网站信息。
+                    <br>
+                        2.用户可以查看网站资质。
+                    <br>
+                        3.备案申请后的网站需在网站底部添加备案代码。
+                    </p>
+                    <br>
+                    <p>#BSICP备案系统如何使用？</p>
+                    <p>
+                        1.填写网站相关信息且所有项目不能为空。
+                    <br>
+                        2.备案号由系统自动生成以2021开头的8位数字。
+                    <br>
+                        3.审核通过后会以邮箱的形式通知您，邮件内附带页脚代码及说明。
+                    </p>
+                    <br>
+                    <p>#BSICP备案系统如何修改备案信息？</p>
+                    <p>
+                        1.请使用申请备案时填写的管理邮箱发送至邮箱xxx@xx.com。
+                    <br>
+                        2.邮件主题填写 [修改备案信息] 。
+                    <br>
+                        3.邮件内容填写需要修改备案信息的项目。
+                    </p>
+                    <br>
+                    <p>#备案注意事项！</p>
+                    <p>
+                        1.申请提交后请查询备案号并将备案代码放入网站底部！
+                    <br>
+                        1.网站内容无违规、违法、不良等信息！
+                    <br>
+                        2.网站名称必须要匹配！
+                    <br>
+                        3.不可填写敏感词！
+                    </p>
+                    <a name="close">关闭</a>
+                </div>
+                <div id="popup2">
+                    <h2>用户协议</h2>
+                    <p>警告：BSICP备案系统是没有任何实际用途和法律效益的，与中国工信部ICP备案及公安备案性质完全不同，两者没有任何关系，请您详细阅读我们的服务条款并且再您同意的情况下使用，如因违法犯罪等造成损失或因不知道BSICP备案系统的作用而导致产生损失，我们将不会为您负任何责任，一切责任由您自己承担！</p>
+                    <br>
+                    <p>
+                        1.本网站与中国工信部ICP备案及公安备案完全不同。
+                    <br>
+                        2.本站不对任何网站信息的准确性负责。
+                    <br>
+                        3.本站不对任何数据安全负责。
+                    <br>
+                        4.如您使用了本站，即代表您愿意承担一切后果。
+                    <br>
+                        5.本网站仅用于查询XX主机网站基本信息，最终选择权归XX主机所属！
+                    <br>
+                        6.本条款会在不通知您的情况下进行更改，只要您使用本站即代表同意条款！
+                    </p>
+                    <a name="close">关闭</a>
+                </div>
+                <div id="popup3">
+                    <h2>页脚代码</h2>
+                    <p>请在网站底部放入以下代码，如下：</p>
+                    <p>&lt;img style="vertical-align: middle;" src="https://www.xxx.com/icon.png" alt=""&gt;&lt;a target="_blank" href="https://www.xxx.com/#20210000"&gt; BSICP备20210000号&lt;/a&gt;</p>
+                    <a name="close">关闭</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

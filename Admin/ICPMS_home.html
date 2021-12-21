@@ -1,0 +1,75 @@
+<div class="container">
+	<div class="content-panel">
+		<div class="content-panel-title">备案概况</div>
+		<div class="content-panel-info">
+			<div class="content-panel-item">
+				<span>已备案</span>
+				<span id="isok">0</span>
+			</div>
+			<div class="content-panel-item">
+				<span>待审核</span>
+				<span id="issub">0</span>
+			</div>
+			<div class="content-panel-item">
+				<span>已退回</span>
+				<span id="isback">0</span>
+			</div>
+			<div class="content-panel-item">
+				<span>已注销</span>
+				<span id="islock">0</span>
+			</div>
+		</div>
+	</div>
+	<div class="content-panel">
+		<div class="content-panel-title">系统信息</div>
+		<table class="layui-table">
+			<colgroup>
+				<col>
+				<col>
+			</colgroup>
+			<thead>
+				<tr>
+					<th>名称</th>
+					<th>参数</th>
+				</tr> 
+			</thead>
+			<tbody>
+				<tr>
+					<td>PHP版本</td>
+					<td id="version"></td>
+				</tr>
+				<tr>
+					<td>环境信息</td>
+					<td id="sapi"></td>
+				</tr>
+				<tr>
+					<td>系统信息</td>
+					<td id="uname"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		getHomeinfo();
+		setInterval(function () {
+			getHomeinfo();
+		}, 5000);
+		function getHomeinfo(){
+			$.ajax({
+				url: '../API/admin.php',
+				data: {
+					a: 'getHomeinfo'
+				},
+				success:function(e){
+					if (e.errCode == 200) {
+						for (i in e.data) {
+							$(`#${i}`).text(e.data[i])
+						}
+					}
+				}
+			});
+		};
+	});
+</script>
