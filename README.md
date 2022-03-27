@@ -43,7 +43,7 @@ php版本建议：7.3以下
 
 ### 参与贡献
 
-BILICAT、Glenlio
+iblis、Glenlio
 
 ### 版本更新
 
