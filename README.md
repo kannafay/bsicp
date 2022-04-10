@@ -43,7 +43,7 @@ php版本建议：7.3以下
 
 ### 参与贡献
 
-iblis、Glenlio
+神秘布偶猫、Glenlio
 
 ### 版本更新
 
